@@ -657,3 +657,71 @@ int main()
 	printf("s=%d\n", s);
 	return 0;
 }
+#include<stdio.h>
+int r_length(char* str) {
+	if (*str != '\0') {
+		return 1 + r_length(str + 1);
+	}
+	else
+		return 0;
+}
+int main()
+{
+	char arr[] = "bit";
+	int len = 0;
+	len = r_length(arr);
+	printf("len=%d", len);
+	return 0;
+}
+
+#include<stdio.h>//n的阶乘
+int r_cheng(int a) {
+	if (a != 0) {
+		return a * r_cheng(a-1);
+	}
+	else
+		return 1;
+}
+int main()
+{
+	int n = 0;
+	int s = 0;
+	scanf("%d", &n);
+	s = r_cheng(n);
+	printf("s=%d\n", s);
+	return 0;
+}
+
+#include<stdio.h>
+int Fib(int i)
+{
+	if (i> 2)
+		return Fib(i - 1) + Fib(i - 2);
+	else
+		return 1;
+}
+int Fib(int ret) {//循环方式
+	int a = 1;
+	int b = 1;
+	int c = 1;
+
+	while (ret > 2) {
+		c = a + b;
+		a = b;
+		b = c;
+		ret--;
+		}
+		return c;
+}
+
+int main()
+{
+	int n = 0;
+	int s = 0;
+	scanf("%d", &n);
+	s = Fib(n);
+	printf("s=%d", s);
+
+
+	return 0;
+}
